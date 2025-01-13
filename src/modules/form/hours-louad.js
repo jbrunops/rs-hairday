@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { opneningHours } from "../../utils/opening-hours.js";
+const hours = document.getElementById("hours");
 
 export function hoursLouad({ date }) {
   const opening = opneningHours.map((hour) => {
@@ -13,5 +14,16 @@ export function hoursLouad({ date }) {
       hour,
       available: isHourPast,
     };
+  });
+
+  // renderizar os horários
+  opening.forEach(({ hour, available }) => {
+    const li = document.createElement("li");
+
+    li.classList.add("hour");
+    li.classList.add(available ? "hour-available" : "hour-unabailable");
+
+    li.textContent = hour;
+    hours.append(li);
   });
 }
