@@ -19,8 +19,8 @@ export function hoursLouad({ date, dailySchedules }) {
     // adicionar a hora na data e verificar se está no passado.
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
 
-    // DANDO ERRO 2
-    const available = !unavailableHours.includes(hour) || !isHourPast;
+    // DANDO ERRO 2 - resolvido, estava || e era &&
+    const available = !unavailableHours.includes(hour) && !isHourPast;
 
     return {
       hour,
