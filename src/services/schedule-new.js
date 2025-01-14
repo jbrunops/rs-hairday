@@ -1,3 +1,5 @@
+// Mais um erro aqui: eu tinha colocado ../../ sendo que a pasta estava antes.
+import { scheduleFetchByDay } from "../services/schedule-fetch-by-day.js";
 import { apiConfig } from "./api-config.js";
 
 export async function scheduleNew({ id, name, when }) {
