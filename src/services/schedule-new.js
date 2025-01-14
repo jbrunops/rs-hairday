@@ -8,7 +8,8 @@ export async function scheduleNew({ id, name, when }) {
     await fetch(`${apiConfig.baseURL}/schedules`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/jason",
+        // ERRO DE DIGITAÇÃO NO jason
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ id, name, when }),
     });
