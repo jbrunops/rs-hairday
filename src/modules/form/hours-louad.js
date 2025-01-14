@@ -4,6 +4,9 @@ import { hoursClick } from "./hours-click.js";
 const hours = document.getElementById("hours");
 
 export function hoursLouad({ date }) {
+  // Limpar lista de horários
+  hours.innerHTML = "";
+
   const opening = opneningHours.map((hour) => {
     //Recuperar a hora
     const [scheduleHour] = hour.split(":");
